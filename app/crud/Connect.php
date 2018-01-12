@@ -1,5 +1,6 @@
 <?php
 #Connect.php
+namespace app\crud;
 
 class Connect 
 {
@@ -41,7 +42,7 @@ class Connect
 	{
 
 		try {
-			self::$instance->mysqli = @new mysqli (
+			self::$instance->mysqli = mysqli (
 				self::$instance->host [ "host" ].":".self::$instance->host [ "port" ], 
 				self::$instance->host [ "user" ], 
 				self::$instance->host [ "password" ], 

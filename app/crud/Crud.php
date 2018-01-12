@@ -13,7 +13,7 @@ class Crud
     private $data = null;
     private $response = null;
 
-    public static function on ( Mysqli $connect = null, Modeldata $model = null ): Crud 
+    public static function on ( $connect = null, Modeldata $model = null ): Crud 
     {
 
         if ( self::$instance === null && $connect !== null ) { 

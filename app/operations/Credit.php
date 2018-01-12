@@ -3,8 +3,6 @@ namespace app\operations;
 
 use app\operations\ICredit;
 use app\operations\Token;
-use app\crud\Crud;
-
 
 class Credit implements ICredit
 {
@@ -17,10 +15,9 @@ class Credit implements ICredit
 
 	public function add ( string $value = null ): bool
 	{
-		$token = ( $this->token !== null ) ? $this->token->gerate ( $value ) : 0;
-		Crud::on ( Connect::on ( ), Modeldata::on ( ) );
-		
+		$token = ( $this->token !== null ) ? $this->token->gerate ( $value ) : 0;		
 		$token; $type = 1; $value; $description = "credit";
+
 
 		return true; 
 	}

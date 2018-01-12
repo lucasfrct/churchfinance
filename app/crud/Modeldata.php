@@ -1,5 +1,6 @@
 <?php
 #Modeldata.php
+namespace app\crud;
 
 class Modeldata 
 {
