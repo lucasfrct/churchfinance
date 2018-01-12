@@ -42,7 +42,7 @@ class Connect
 	{
 
 		try {
-			self::$instance->mysqli = mysqli (
+			self::$instance->mysqli = @new \mysqli (
 				self::$instance->host [ "host" ].":".self::$instance->host [ "port" ], 
 				self::$instance->host [ "user" ], 
 				self::$instance->host [ "password" ], 
@@ -64,7 +64,7 @@ class Connect
 	}
 
 	# inicia uma instancia da classe ConnectMysqli
-	public static function on ( ): Mysqli 
+	public static function on ( ): \Mysqli 
 	{
 
 		#inicia uma instância se necessário
