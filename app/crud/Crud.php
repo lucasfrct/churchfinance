@@ -2,8 +2,8 @@
 #Crud.php
 namespace app\crud;
 
-require_once ( "Connect.php" );
-require_once ( "Modeldata.php" );
+use app\crud\Connect as CrudConnect;
+use app\crud\Modeldata as CrudMedeldata;
 
 class Crud
 {
@@ -12,18 +12,16 @@ class Crud
     private $model = null;
     private $data = null;
     private $response = null;
+    public static $message = Array ( ); #array_push (self::$message, "" );
 
-    public static function on ( $connect = null, Modeldata $model = null ): Crud 
+    public static function on ( ): Crud 
     {
-
-        if ( self::$instance === null && $connect !== null ) { 
-            self::$instance = new Crud;
-        };
-
-        if ( self::$instance !== null ) {
-            self::$instance->connect = $connect;
-            self::$instance->model = $model;
-        };
+        if ( null === self::$instance ) { 
+            self::$instance = new self ( );
+            self::$instance->connect = CrudConnect::on ( );
+             self::$instance->model = CrudMedeldata::on ( );
+            array_push (self::$message, "New instance Crud" );
+        };  
 
         return self::$instance;
     }
@@ -34,7 +32,7 @@ class Crud
                 self::$instance->connect->query (  
                     "INSERT INTO {$table} ( {$fields} ) VALUES ( {$values} )" 
                 ) 
-                && self::$instance->connect->affected_rows > 0 
+                && self::$instance->connect->affected_rows > 0 && array_push (self::$message, "Use create" )
             ) ? true : false;
         };
     } 
@@ -52,6 +50,7 @@ class Crud
             while ( $row = $result->fetch_assoc ( ) ) {  
                 array_push ( $rows, $row ); 
             };
+            array_push (self::$message, "Use read" );
             return $rows;
         };
     }
@@ -61,7 +60,7 @@ class Crud
         if ( !empty ( $table ) && !empty ( $set ) && !empty ( $condition ) ) {
             return  ( 
                 self::$instance->connect->query ( "UPDATE {$table} SET {$set} {$condition}" )
-                && self::$instance->connect->affected_rows > 0 
+                && self::$instance->connect->affected_rows > 0 && array_push (self::$message, "Use update" )
             ) ? true : false;
         };
     }
@@ -72,6 +71,7 @@ class Crud
     }
 
     public function digestJson ( string $data = null ): array {
+        array_push (self::$message, "Use digest" );
         return self::$instance->data = self::$instance->model->digest ( $data );
     }
 
@@ -107,12 +107,19 @@ class Crud
                 break;
         };
 
+        array_push (self::$message, "Use run" );
+
         return self::$instance->response;
     }
 
     public function response ( ): string 
-    {
+    { 
+        array_push (self::$message, "return response" );
         return self::$instance->response;
+    }
+
+    public static function report ( ) {
+        return json_encode ( self::$message );
     }
 
     private function __construct ( ) { }

@@ -8,8 +8,8 @@ class Modeldata
 
     public static function on ( ): Modeldata 
     {
-        if ( self::$instance === null ) {
-            self::$instance = new Modeldata;
+        if ( null === self::$instance ) {
+            self::$instance = new self ( );
         };
 
         return self::$instance;

@@ -1,0 +1,82 @@
+body * {
+	box-sizing: border-box !important;
+	word-break: break-all !important;
+    word-wrap: break-word !important;
+    vertical-align: top;
+}
+
+body a, body a:hover, body a:focus {
+	text-decoration: none;
+	color: #FFF;
+}
+
+body {
+	background-color: #FBE9E7;
+	color: #fff;
+}
+
+body .line {
+	border: dashed 0.1px #F00;
+}
+
+body header, body main, body footer {
+	padding: 4px;
+	min-height: 30px;
+	clear: both;
+}
+
+body header, body footer {
+	background-color: #FF5722;
+	
+}
+
+body footer {
+	bottom: 0;
+}
+
+body .saldo {
+	padding: 10px;
+	background-color: #FF7043;
+}
+
+body .saldo > * {
+	display: block;
+	margin: 0;
+	padding: 5px;
+}
+
+body .menu {
+	padding: 10px;
+}
+
+body .menu nav {
+	
+}
+
+body .menu nav ul {
+	display: inline-block;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+body .menu nav ul li {
+	display: block;
+	width: 100%;
+	border: solid 0.1px #F00;
+	background-color: #D84315;
+	margin: 1px 0;
+	padding: 0;
+}
+
+body .menu nav ul li a {
+	width: 100%;
+	display: block;
+	padding: 8px;
+	margin: 0; 
+}
+
+body .operation {
+	background-color: #FF7043;
+	padding: 10px;
+}

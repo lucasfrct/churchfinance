@@ -7,11 +7,11 @@ class Connect
 
 	# Instância única 
 	private static $instance = null;
+	private static $message = Array ( );
+	private static $exception = Array ( );
 	private $host = array( "host"=> "127.0.0.1", "port"=> "3306", "user"=> "root", "password"=> "" );
-	private $database = "churchfinance";
+	private $database = "crud";
 	private $mysqli = null;
-	private $message = Array ( );
-	private $exception = Array ( );
 
 	# Testa se o servidor esta online
 	private function onServer ( string $host = "", string $port = "" ) : bool 
@@ -24,14 +24,14 @@ class Connect
 			if ( $server == true ) {
 				@fclose ( $server );
 				$onServer = true;
-				array_push( $this->message, "Server On-line: ".$host.":".$port );
+				array_push( self::$message, "Server On: ".$host.":".$port );
 			} else {
 				$onServer = false;
-				array_push( $this->message, "Server Off-line: ".$host.":".$port );
+				array_push( self::$message, "Server Off: ".$host.":".$port );
 			};
 
 		} catch ( Exception $error ) {
-            array_push ( $this->exceptions, $error );
+            array_push ( self::$exceptions, $error );
 		};
 
 		return $onServer;
@@ -42,40 +42,41 @@ class Connect
 	{
 
 		try {
-			self::$instance->mysqli = @new \mysqli (
+			 $Mysqli = @new \Mysqli (
 				self::$instance->host [ "host" ].":".self::$instance->host [ "port" ], 
 				self::$instance->host [ "user" ], 
 				self::$instance->host [ "password" ], 
 				self::$instance->database 
 			);
 			
-			if ( !self::$instance->mysqli->connect_error && !mysqli_connect_errno ( ) ) {
+			if ( !$Mysqli->connect_errno && !$Mysqli->connect_error ) {
+				self::$instance->mysqli = $Mysqli;
 				self::$instance->mysqli->set_charset( "utf8" );
-				array_push ( self::$instance->message, "Open Connect Mysqli." );
+				array_push ( self::$message, "Open Connect Mysqli." );
 			} else {
-				array_push ( self::$instance->message, "Error Connect Mysqli: ".self::$instance->mysqli->connect_error );
+				array_push ( self::$message, "Error Connect Mysqli: ".$Mysqli->connect_errno );
+				array_push ( self::$message, "Error Connect Mysqli: ".$Mysqli->connect_error );
 			};
 
 		} catch ( Exception $exception ) {
-			array_push ( self::$instance->exception, $exception );
+			array_push ( self::$exception, $exception );
 		};
 
 		return self::$instance->mysqli;
 	}
 
 	# inicia uma instancia da classe ConnectMysqli
-	public static function on ( ): \Mysqli 
+	public static function on ( )
 	{
-
 		#inicia uma instância se necessário
-		if ( self::$instance === null ) { 
-			self::$instance = new Connect;
-			array_push ( self::$instance->message, "New Instance Connect" );
+		if ( null === self::$instance ) { 
+			self::$instance = new self ( );
+			array_push ( self::$message, "New Instance Connect" );
 		};
 
 		$inst = self::$instance;
 
-		if ( $inst !== null && $inst->onServer ( $inst->host [ "host" ], $inst->host [ "port" ] ) ) {;
+		if ( null !== $inst && $inst->onServer ( $inst->host [ "host" ], $inst->host [ "port" ] ) ) {;
 			$inst->open ( );
 		};
 		
@@ -85,10 +86,10 @@ class Connect
 	# fecha connexão mysqli 
 	private function close ( ) 
 	{
-		if ( self::$instance->mysqli->close ( ) ) {
-			array_push ( self::$instance->message, "Close connect Mysqli." );
+		if ( null !== self::$instance->mysqli && self::$instance->mysqli->close ( ) ) {
+			array_push ( self::$message, "Close connect Mysqli." );
 		} else {
-			array_push ( self::$instance->message, "Error close connect Mysqli." );
+			array_push ( self::$message, "Error close connect Mysqli." );
 		};
 	}
 
@@ -96,7 +97,7 @@ class Connect
 	public static function off ( ) 
 	{
 		self::$instance->close ( );
-		array_push ( self::$instance->message, "Off instance Connect" );
+		array_push ( self::$message, "Off instance Connect" );
 		return self::$instance = null;
 	}
 
@@ -104,19 +105,14 @@ class Connect
 	public static function report ( ): string 
 	{
 		# return = { status: true, errors: 01, message: [ ], exceptions: [ ], }
-
-		$report = array ( 
-			"message" => self::$instance->message,
-			"exception" => self::$instance->exception,
-		);
-
-		self::$instance->message = array ( );
-
-		return json_encode ( $report );
+		return json_encode ( array ( "message" => self::$message, "exception" => self::$exception ) );
 	}
 
 	# Protetor Singletom na Construção da classe
-	private function __construct ( ) { }
+	private function __construct ( ) { 
+		self::$message = array ( );
+		self::$exception = array ( );
+	}
 
 	# Protetor Simgleton na colnagem da classe
 	private function __clone ( ) { }

@@ -3,7 +3,7 @@ namespace app\operations;
 
 use app\operations\ICredit;
 use app\operations\Token;
-use app\crud\Connect;
+use app\crud\Crud as CreditCrud;
 
 class Credit implements ICredit
 {
@@ -16,18 +16,19 @@ class Credit implements ICredit
 
 	public function add ( string $value = null ): bool
 	{
-		$token = ( $this->token !== null ) ? $this->token->gerate ( $value ) : 0;		
-		$token; $type = 1; $value; $description = "credit";
+		$token = $this->token->gerate ( $value );
+		$type = 1; 
+		$value; 
+		$description = "operation of credit";
 
-		$conn = Connect::on ( );
-		$res = $conn->query ( "SHOW DATABASES" );
-		while ( $row = $res->fetch_assoc ( ) ) {
-			echo "<br> conn - ".$row["Database"];
-		}
+		$crud = CreditCrud::on ( );
+		$res = $crud->create ( 
+			"churchfinance.operations", 
+			"token, type, value, description", 
+			'"'.$token.'","'.$type.'","'.$value.'","'.$description.'"'
+		);
 
-		
-
-		return true; 
+		return $res;
 	}
 
 }

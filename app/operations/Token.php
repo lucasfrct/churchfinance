@@ -9,7 +9,7 @@ class Token
 	}
 
 	public function gerate ( string $base = null ) {
-		return sha1 ( date ( DATE_ATOM, mktime ( 0, 0, 0, 7, 1, 2000 ) ).$base );
+		return sha1 ( \DateTime::createFromFormat ( 'U.u', number_format ( microtime ( true ), 6, '.', '' ) )->format ( "m-d-Y H:i:s.u" ).$base );
 	}
 		
 }
