@@ -8,9 +8,8 @@ body h1, body h2, body h3, body h4, body h5, body h6 {
 	padding: 0.15em;
 }
 
-
-body span {
-	font-size: 1.4em;
+body a {
+	text-decoration: none;
 }
 
 body .text-center {
@@ -49,6 +48,10 @@ body .color-details {
 	color: #FFF;
 }
 
+body .text-primary {
+	color: #E64A19;
+}
+
 body main {
 	padding: 1em !important;
 }
@@ -66,58 +69,227 @@ body .extrato {
 	padding: 1em;
 }
 
+body .alias {
+	position: relative;
+	font-size: 1.4em;
+	top: 6px;
+	left: 6px;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background-color: #EFEFEF;
+	border-radius: 50%;
+	padding: 0.5em 0 0 0.4em;
+}
+
+body .title {
+	padding: 0.5em;
+}
+
+body .alias::before {
+	padding: 15px;
+}
+
+body .access {
+	padding: 3em;
+}
+
+body .access span {
+	padding: 1em;
+}
+
+body .access input {
+	width: calc( 100% - 17px );
+	background-color: transparent;
+	border: none;
+	font-size: 2.4em;
+	padding-left: 0.5em;
+}
+
+body .access .icon {
+	width: 16px;
+	padding: 0;
+	margin: 0;
+}
+
+body .input {
+	border-bottom: solid 1px #FFF;
+}
+
+body footer div { 
+	padding: 1em !important;
+}
 
 
-body [name="btn"] {
-	margin: 10px;
+/*BTNs - CTA (call to action ) / primary / secondary / Ghost Button / FAB (floating Action Button) */
+/*tamanhos - 47-57 e 72px*/
+/*estados - normal / foco (:focus) / pressionado (:active) / hover (:hover) /  inativo(:disabled) / progresso */
+
+body [data-btn="fab"], body [data-btn="fab"]::before, body [data-btn="fab"]::after {
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+	border: none;
+	background-color: inherit;
+	content: "0";
+	color: inherit;
+	font-size: 0;
+	font-weight: 100;
+	position: relative;
+	left: 0;
+	padding: 0;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	-webkit-transform-origin: center center;
+	-moz-transform-origin: center center;
+	-o-transform-origin: center center;
+	-ms-transform-origin: center center;
+	transform-origin: center center;
+	top: 0;
+}
+
+body [data-btn="fab"] {
+	margin: 15px;
 	width: 30px;
 	height:30px;
-	padding: 0;
-	top: 0;
-	left: 0;
-	background-color: inherit;
-	border-radius: 50%;
-	font-size: 0;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
 	transform: rotate(0deg);
-	transform-origin: center center;
-	transition: all 0.3s ease-in-out;
-
 }
 
-body [name="btn"]::before {
-	content: "0";
-	background-color: inherit;
-	position: relative;
+body [data-btn="fab"]::before {
 	padding: 30px;
-	left:-15px; /* -7 */
+	left:-15px;
 	top:8px;
-	border-radius: 50%;
 	box-shadow: 0px 0px 2px #212121;
+	overflow: hidden;
 }
 
-body [name="btn"]::after {
+body [data-btn="fab"]::after {
 	content: "+";
 	font-size: 60px;
 	font-weight: 100;
-	position: relative;
-	padding: 0;
-	left:-10px; /*-2*/
+	left:-10px;
 	top:-3px;
 	background-color: transparent;
-	width: 30px;
-	height: 30px;
-	overflow: hidden;
-	border-radius: 50%;
 	line-height: 0;
 }
 
-body [name="btn"]:hover::before {
-	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2) inset;
-	border: solid 0.5px rgba(0, 0, 0, 0.2);
-	-webkit-transition: box-shadow 2s ease-in-out 2s;
-	transition: "box-shadow" 2s ease-in-out;
+body [data-btn="fab"]:disabled {
+	background-color: #BDBDBD !important;
+	color: #424242 !important;
 }
 
-body [name="btn"]:checked {
+body [data-btn="fab"]:not(:disabled):hover::before, body [data-btn="fab"]:not(:disabled):focus::before {
+	box-shadow: 0px 0px 4px #212121, 0 0 20px 1px rgba(255,255,255, 0.15) inset;
+}
+
+body [data-btn="fab"]:not(:disabled):active::before {
+	transition: none;
+	box-shadow: 0px 0px 3px 1px #FFF, 0px 0px 3px 2px #212121;
+}
+
+body [data-btn="fab"]:not(:disabled):focus, body [name="fab"]:not(:disabled):hover {
+	-webkit-transform: rotate(225deg);
+	-moz-transform: rotate(225deg);
+	-o-transform: rotate(225deg);
+	-ms-transform: rotate(225deg);
 	transform: rotate(225deg);
+}
+
+body [data-btn="cta"] {
+	width: calc( 100% - 10px);
+	background-color: #FFF;
+	border: none;
+	border-radius: 2px;
+	margin: 10px 5px;
+	padding: 1em;
+}
+
+body [data-btn="cta"]:not(:disabled):focus, body [data-btn="cta"]:not(:disabled):hover {
+	box-shadow: 0 0 2px 1px #999, 0 0 10px 1px #DDD inset;
+}
+
+body [data-btn="cta"]:not(:disabled):active {
+	box-shadow: 0 0 3px 1px #FFF, 0 0 3px 1px #AAA inset;
+
+}
+
+body [data-btn="cta"]:disabled {
+	color: #AAA;
+	background-color: #DDD;
+}
+
+/* preload animation*/
+
+body .preload, body .preload::before, body .preload::after {
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-size: 100%;
+	line-height: 0;
+	background-color: #FFF;
+	padding: 0
+	margin: 0;
+	-webkit-transform: scale(0.3);
+	-moz-transform: scale(0.3);
+	-o-transform: scale(0.3);
+	-ms-transform: scale(0.3);
+	transform: scale(0.3);
+}
+
+body .preload {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	font-size: 0 !important;
+	border-radius: 50%;
+	animation-name: before;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-delay: 0.33s;
+	margin: 2px 46px;
+}
+
+body .preload::before {
+	content: "0";
+	font-size: 0;
+	top: 16px;
+	left: -45px;
+	padding: 15px;
+	background-color: #FFF;
+	border-radius: 50%;
+	animation-name: before;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+body .preload::after {
+	content: "0";
+	font-size: 0;
+	top: 15.2px;
+	left: 44px;
+	padding: 15px;
+	background-color: #FFF;
+	border-radius: 50%;
+	animation-name: before;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-delay: 0.66s;
+}
+
+@keyframes before {
+	0% { background-color: #FFF; }
+	40% { background-color: #FFF; }
+	50% { background-color: #666 }
+	100% { background-color: #FFF; }
 }
