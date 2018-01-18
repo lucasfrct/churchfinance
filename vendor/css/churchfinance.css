@@ -8,6 +8,10 @@ body h1, body h2, body h3, body h4, body h5, body h6 {
 	padding: 0.15em;
 }
 
+body > * {
+	font-size: 1.4em;
+}
+
 body a {
 	text-decoration: none;
 }
@@ -41,8 +45,6 @@ body .color-background {
 	color: #424242;
 }
 
-
-
 body .color-details {
 	background-color: #424242;
 	color: #FFF;
@@ -71,7 +73,7 @@ body .extrato {
 
 body .alias {
 	position: relative;
-	font-size: 1.4em;
+	font-size: 14px;
 	top: 6px;
 	left: 6px;
 	display: inline-block;
@@ -102,7 +104,7 @@ body .access input {
 	width: calc( 100% - 17px );
 	background-color: transparent;
 	border: none;
-	font-size: 2.4em;
+	font-size: 1.8em;
 	padding-left: 0.5em;
 }
 
@@ -119,6 +121,32 @@ body .input {
 body footer div { 
 	padding: 1em !important;
 }
+
+body .teclado {
+	padding: 0;
+	margin: 0.5em 0 0 0;
+}
+
+body .teclado > button {
+	width: calc( 100% / 3 - 16px );
+	margin: 5px 2px;
+	padding: 8px 2px;
+	display: inline-block;
+	border: none;
+	border-radius: 2px;
+	color: #424242;
+	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+body .teclado > button:focus, body .teclado > button:focus {
+	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 5px 2px #FFF inset;
+}
+
+body .teclado > button:active {
+	box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.6);
+}
+
+
 
 
 /*BTNs - CTA (call to action ) / primary / secondary / Ghost Button / FAB (floating Action Button) */
@@ -292,4 +320,30 @@ body .preload::after {
 	40% { background-color: #FFF; }
 	50% { background-color: #666 }
 	100% { background-color: #FFF; }
+}
+
+/* LOAD animation */
+/*
+body .load {
+	display: block;
+	padding: 0 !important;
+	font-size: 5em; 
+ 	display: inline-block;
+ 	width: 0.4em;
+ 	height: 0.4em;
+ 	border: 0.1em solid red;
+ 	position: relative;
+ 	border-radius: 500%;
+}*/
+
+body .load {
+	padding: 0 !important;
+	width: 0;
+  	height: 0;
+  	border-left: 70px solid transparent;
+  	border-right: 70px solid transparent;
+  	border-top: 100px solid red;
+  	-moz-border-radius: 50%;
+  	-webkit-border-radius: 50%;
+  	border-radius: 50%;
 }
