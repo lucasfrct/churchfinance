@@ -10,7 +10,7 @@ class Service
 
 	private static function post ( ) {
 
-		if ( $_SERVER [ "REQUEST_METHOD"] == 'POST' ) {
+		if ( $_SERVER [ "REQUEST_METHOD" ] == 'POST' ) {
 			self::$crud->digestJson ( json_encode ( $_POST ) );
 			self::$crud->run ( );
 			echo self::$crud->response ( );	
