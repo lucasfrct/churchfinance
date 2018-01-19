@@ -60,6 +60,11 @@ body main {
 
 body .saldo {
 	padding: 1em;
+	line-height: 1.4em;
+	background-color: #FFF;
+	margin: 0.5em;
+	border-radius: 6px;
+	box-shadow: 0 0 1px 0px #AAA;
 }
 
 body .menu {
@@ -149,7 +154,7 @@ body .teclado > button:active {
 
 
 
-/*BTNs - CTA (call to action ) / primary / secondary / Ghost Button / FAB (floating Action Button) */
+/*BTNs - CTA (call to action ) / primary / secondary / Ghost Button / FAB (floating Action Button) / swith Button (on/off mobile)*/
 /*tamanhos - 47-57 e 72px*/
 /*estados - normal / foco (:focus) / pressionado (:active) / hover (:hover) /  inativo(:disabled) / progresso */
 
@@ -316,34 +321,66 @@ body .preload::after {
 }
 
 @keyframes before {
-	0% { background-color: #FFF; }
-	40% { background-color: #FFF; }
-	50% { background-color: #666 }
-	100% { background-color: #FFF; }
+	0% { background-color: #F5F5F5; }
+	40% { background-color: #F5F5F5; }
+	50% { background-color: #616161 }
+	100% { background-color: #FAFAFA; }
 }
 
 /* LOAD animation */
-/*
-body .load {
-	display: block;
-	padding: 0 !important;
-	font-size: 5em; 
- 	display: inline-block;
- 	width: 0.4em;
- 	height: 0.4em;
- 	border: 0.1em solid red;
- 	position: relative;
- 	border-radius: 500%;
-}*/
 
-body .load {
-	padding: 0 !important;
-	width: 0;
-  	height: 0;
-  	border-left: 70px solid transparent;
-  	border-right: 70px solid transparent;
-  	border-top: 100px solid red;
-  	-moz-border-radius: 50%;
-  	-webkit-border-radius: 50%;
-  	border-radius: 50%;
+body .loader, body .loader::before, body .loader::after {
+	position: relative;
+	display: inline-block;
+	padding: 8px !important;
+	border-style: solid;
+	border-color: #F3F3F3;
+	border-radius: 50%;
+	transform-origin: center center;
+	animation-name: spin;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+body .loader::before, body .loader::after {
+	top: -5px;
+	left: -5px;
+	border-width: 5px;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	content: "";
+	position: absolute;
+}
+
+body .loader {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	width: 32px;
+	height: 32px;
+	border-width: 8px;
+	border-top-color: #FF8A65;
+	border-bottom-color: #FF8A65;
+	animation-duration: 2s;
+	box-shadow: 0 0 2px 2px #999, 0 0 2px 1px #999 inset;
+}
+
+body .loader::before {
+	border-top-color: #E64A19;
+	border-bottom-color: #E64A19;
+	animation-duration: 1s;
+	animation-direction: reverse;
+}
+
+body .loader::after {
+	border-top-color: #FFCCBC;
+	border-bottom-color: #FFCCBC;
+	animation-duration: 1.5s;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
 }
