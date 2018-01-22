@@ -36,7 +36,117 @@ body .text-primary {
 	color: #E64A19;
 }
 
-body .saldo {
+body .radius-circle {
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+}
+
+body .hr {
+	display: block;
+	background-color: #FFF;
+	padding: 0;
+	font-size: 0;
+	height: 2px;
+	margin-top: 10px;
+	margin-bottom: 7.5px;
+}
+
+body header {
+	background-color: #FFF;
+}
+
+body header .title {
+	padding: 0.5em;
+}
+
+body footer div {
+	margin-top: 7.5px !important;
+}
+
+body footer > div > a {
+	font-size: 0.6em;
+}
+
+body .alias {
+	background-color: #EAEAEA;
+	display: table-cell;
+	height: 30px;
+	vertical-align: middle;
+	position: relative;
+	text-align: center;
+	-webkit-transform: translate( calc( 50% - 7.5px ), calc( 50% - 11px ) );
+	-moz-transform: translate( calc( 50% - 7.5px ), calc( 50% - 11px ) );
+	-o-transform: translate( calc( 50% - 7.5px ), calc( 50% - 11px ) );
+	-ms-transform: translate( calc( 50% - 7.5px ), calc( 50% - 11px ) );
+	transform: translate( calc( 50% - 7.5px ), calc( 50% - 11px ) );
+	width: 30px;
+}
+
+body .alias::before {
+	padding: 15px;
+}
+
+body.page-login .lock {
+	position: absolute;
+}
+
+body.page-login .input-login {
+	display: block;
+	font-size: 1em;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	-ms-border-radius: 4px;
+	border-radius: 4px;
+	font-size: 1.4em;
+	padding: 0.25em 1em;
+	margin-top: 8px;
+	background-color: transparent;
+}
+
+body.page-login .teclado {
+	margin-bottom: 7.5px;
+}
+
+body.page-login .teclado > button {
+	width: calc( 100% / 3 - 9px );
+	padding: 8px 2px;
+	margin: 5px 4px;
+	display: inline-block;
+	border: none;
+	border-radius: 2px;
+	color: #424242;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+	background-color: #FFF;
+}
+
+body.page-login .teclado > button:nth-child(1), 
+body.page-login .teclado > button:nth-child(4) {
+	margin-left: 0;
+}
+
+body.page-login .teclado > button:nth-child(3), 
+body.page-login .teclado > button:nth-child(6) {
+	margin-right: 0;
+}
+
+body.page-login .teclado > button:focus, 
+body.page-login .teclado > button:hover {
+	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 5px 2px #FFF inset;
+}
+
+body.page-login .teclado > button:active {
+	box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.6);
+}
+
+body.page-home {
+
+}
+
+body.page-home .saldo {
 	padding: 1em;
 	line-height: 1.4em;
 	background-color: #FFF;
@@ -45,83 +155,160 @@ body .saldo {
 	box-shadow: 0 0 1px 0px #AAA;
 }
 
-body .menu {
-	padding: 1em;
+body.page-extract .saldo{
+	border-top: solid 1px #DDD;
+	border-bottom: solid 1px #DDD;
+	font-size: 0.85em;
 }
 
-body .extrato {
-	border: solid 1px #212121;
-	padding: 1em;
+body.page-extract .menu {
+	text-align: center;
+	padding: 0.5em 0 0 0;
+	border-bottom: solid 1px #DDD;
 }
 
-body .alias {
-	position: relative;
-	font-size: 14px;
-	top: 6px;
-	left: 6px;
-	display: inline-block;
-	width: 30px;
-	height: 30px;
-	background-color: #EFEFEF;
-	border-radius: 50%;
-	padding: 0.5em 0 0 0.4em;
-}
-
-body .title {
-	padding: 0.6em;
+body.page-extract .menu > div {
+	padding: 0.5em;
 	font-size: 0.8em;
 }
 
-body .alias::before {
-	padding: 15px;
-}
 
-body .access {
-	padding: 3em;
-}
 
-body .access span {
-	padding: 1em;
-}
 
-body .access input {
-	width: calc( 100% - 17px );
-	background-color: transparent;
-	border: none;
-	font-size: 1.8em;
-	padding-left: 0.5em;
-}
 
-body .access .icon {
-	width: 16px;
-	padding: 0;
-	margin: 0;
-}
 
-body .input {
-	border-bottom: solid 1px #FFF;
-}
 
-body .teclado {
-	padding: 0;
-	margin: 0.5em 0 0 0;
-}
 
-body .teclado > button {
-	width: calc( 100% / 3 - 16px );
-	margin: 5px 2px;
-	padding: 8px 2px;
+
+
+
+
+
+
+
+
+
+
+/*
+<a href="#" class="seta-cima">Seta para cima</a>
+<span class="seta-baixo">Seta para baixo</span>
+<i class="seta-esquerda">Seta para esquerda</i>
+<div class="seta-direita">Seta para direita</div>
+*/
+
+
+body [data-shape="arrow-top"], 
+body [data-shape="arrow-right"],
+body [data-shape="arrow-bottom"], 
+body [data-shape="arrow-left"] {
 	display: inline-block;
-	border: none;
-	border-radius: 2px;
-	color: #424242;
-	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+	position: relative;
+	border-color: #F00;
 }
 
-body .teclado > button:focus, body .teclado > button:focus {
-	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 5px 2px #FFF inset;
+body [data-shape="arrow-top"]::before, 
+body [data-shape="arrow-right"]::before,
+body [data-shape="arrow-bottom"]::before, 
+body [data-shape="arrow-left"]::before {
+  content: "";
+  display: inline-block;
+  width: 0; 
+  height: 0; 
+  font-size: 0;
+  line-height: 0;  
+  padding: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  border-width: 5px;
+  border-style: solid;
+  border-color: inherit;
+  margin: 0px 5px 0px 0px; 
 }
 
-body .teclado > button:active {
-	box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.6);
+body [data-shape="arrow-top"]::before {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  top: -1px;
 }
+
+body [data-shape="arrow-right"]::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  top: 1px;
+}
+
+body [data-shape="arrow-bottom"]::before {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  top: 3.5px;
+}
+
+body [data-shape="arrow-left"]::before {
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+	border-left-color: transparent;
+	top: 1px;
+}
+
+body [data-shape="lock"] {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #FFF;
+	border-radius: 4px;
+	position: relative;
+	top: calc(50% - 9px);
+}
+
+body [data-shape="lock"]::before {
+	content: "";
+	display: inline-block;
+	border-width: 1px;
+	border-style: solid;
+	border-color: inherit;
+	position: absolute;
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	border-bottom: transparent;
+	border-left: transparent;
+	transform: rotate(-45deg);
+	top: -7px;
+	left: 1px;
+}
+
+body [data-shape="lock"]::after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	width: 0;
+	height: 3px;
+	left: 5px;
+	top: 3px;
+	border: solid 1px;
+	border-color: inherit;
+}
+
+body .text-right {
+	text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,32 +4,35 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
 	<title>Extrato</title>
-	<link rel="stylesheet" type="text/css" href="vendor/css/grid.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/css/grid.css">
 	<link rel="stylesheet" type="text/css" href="vendor/css/churchfinance.css">
 	<script type="text/javascript" src="vendor/jquery-3.1.1/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="vendor/js/churchfinance.js"></script>
 </head>
-<body>	
+<body class="page-extract">	
 	<header class="row-xs-2">
 		<div class="col-xs-2 row-xs-2">
-			<span class="text-primary alias">LC</span>
+			<span class="text-primary alias radius-circle">LC</span>
 		</div>
 		<div class="row-xs-2 col-xs-8 col-lg-8 title">
-			<div class="row-xs-1">
-				<span class="text-primary">Olá Lucas</span><br>
-				ag 0259 c/c 125771
+			<div>
+				<span class="text-primary">Olá Lucas</span>
+				<div>ag 0259 c/c 125771</div>
 			</div>
 		</div>
 		<div class="col-xs-2 row-xs-2">
-			<span></span>
+			<span data-shape="arrow-bottom"></span>
 		</div>
 	</header>
 	<main class="color-background row-xs-20">
-		<div class="row-xs-1">
-			<small class="col-xs-4"> Saldo em conta</small><small class="col-xs-6" style="text-align: right;">R$ 000000.00</small>
+		<div class="row-xs-2 col-xs-12 saldo">
+			<p>
+				<span class="col-xs-6">Saldo em conta</span>
+				<span class="col-xs-6 text-right">R$ 000000.00</span>
+			</p>
 		</div>
-		<div class="row-xs-1" style="font-size: 0.8em;">
-			<div class="col-xs-2">Tudo</div>
+		<div class="row-xs-2 col-xs-12 menu">
+			<div class="col-xs-3">Tudo</div>
 			<div class="col-xs-3">Entrara</div>
 			<div class="col-xs-3">Saída</div>
 			<div class="col-xs-3">futuro</div>
