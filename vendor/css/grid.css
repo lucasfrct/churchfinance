@@ -1,4 +1,5 @@
-/* GLobal Reset*/
+/* GLobal Reset */
+
 html {
     font-family: Verdana, Arial, Sans-serif !important;
     font-size: 62.5% !important;
@@ -217,15 +218,17 @@ body * [ class*="col-" ], body * [ class*="row-" ]  {
 
 body * [ class*="row-" ] {
     overflow: auto;
-}/*
+}
+
+/* GRID COL-XS
 The Grid it is building for pattern Mobile first 
 The screen is falowing the standart 18:9; contenting 12 cols;
 razon: 18 / 9 = 2 | cols = 12 and rows = 24
-Minimum screen = 320 x 480 
+Minimum screen = 320px x 480px for screen ( VGA - 720px x 480px )
 Were on content 12 cols the of width;
 */
 
-/* Extra Phones - Small Devices (portrait phones, 320px > 575px) */
+/* Extra Phones - Small Devices (portrait phones, 320px - 575px) */
 @media ( min-width: 320px ) {
     body .col-xs-1 {
         width: calc( ( 100% / 12 ) * 1 ); 
@@ -323,6 +326,14 @@ Were on content 12 cols the of width;
         margin-left: 100%;
     }
 }
+
+/* GRID COL-SM
+The Grid it is building for pattern Mobile first 
+The screen is falowing the standart 18:9; contenting 12 cols;
+razon: 18 / 9 = 2 | cols = 12 and rows = 24
+Minimum screen = 576px x 540px for screen ( VGA - 720px x 480px )
+Were on content 12 cols the of width;
+*/
 
 /* Phones - Small Devices (landscape phones, 576px > 767px) */
 @media ( min-width: 576px ) {
@@ -423,6 +434,14 @@ Were on content 12 cols the of width;
     }
 }
 
+/* GRID COL-MD
+The Grid it is building for pattern Mobile first 
+The screen is falowing the standart 18:9; contenting 12 cols;
+razon: 18 / 9 = 2 | cols = 12 and rows = 24
+Minimum screen = 768px x 600px for screen ( SVGA - 800px x 600px )
+Were on content 12 cols the of width;
+*/
+
 /* Tablets - Medium Devices (tablets, 768px > 991px) */
 @media ( min-width: 768px ) {
     body .col-md-1 {
@@ -521,6 +540,14 @@ Were on content 12 cols the of width;
         margin-left: 100%;
     }
 }
+
+/* GRID COL-LG
+The Grid it is building for pattern Mobile first 
+The screen is falowing the standart 18:9; contenting 12 cols;
+razon: 18 / 9 = 2 | cols = 12 and rows = 24
+Minimum screen = 992px x 720px for screen ( SVGA - 800px x 600px )
+Were on content 12 cols the of width;
+*/
 
 /* Desktop - Large Devices (desktops, 992px > 1199px) */
 @media ( min-width: 992px ) {
@@ -621,7 +648,15 @@ Were on content 12 cols the of width;
     }
 }
 
-/* TVs and Multimedia - Extra Large Devices (large desktops, 1200px and up) */
+/* GRID COL-XL
+The Grid it is building for pattern Mobile first 
+The screen is falowing the standart 18:9; contenting 12 cols;
+razon: 18 / 9 = 2 | cols = 12 and rows = 24
+Minimum screen = 1200px X 1050px for screen ( Full HD - 1920px - 1080px )
+Were on content 12 cols the of width;
+*/
+
+/* TVs, Screen HD and Screen Multimedia - Extra Large Devices (large desktops, 1200px and up) */
 @media ( min-width: 1200px ) {
     body .col-xl-1 {
         width: calc( ( 100% / 12 ) * 1 ); 
@@ -718,15 +753,17 @@ Were on content 12 cols the of width;
     body .col-xl-offset-12 {
         margin-left: 100%;
     }
-}/*
+}
+
+/* GRID ROW-XS
 The Grid it is building for pattern Mobile first 
 The screen is falowing the standart 18:9; contenting 24 rows;
 razon: 18 / 9 = 2 | cols = 12 and rows = 24
-Minimum screen = 320 x 480 
+Minimum screen = 320px x 480px for screen ( VGA - 720px x 480px )
 Were on content 24 rows the of height;
 */
 
-/* Extra Phone - Extra Small Devices ( Small Phones, 480px > 639px) */
+/* Extra Phone - Extra Small Devices ( Small Phones, 480px - 599px) */
 @media ( min-height: 480px ) {
     body .row-xs-fluid {
         height: auto !important;
@@ -949,8 +986,16 @@ Were on content 24 rows the of height;
     }
 }
 
-/* Phones - Small Devices (Phones, 640px > 767px) */
-@media ( min-height: 640px ) {
+/* GRID ROW-SM
+The Grid it is building for pattern Mobile first 
+The screen is falowing the standart 18:9; contenting 24 rows;
+razon: 18 / 9 = 2 | cols = 12 and rows = 24
+Minimum screen = 576px x 540px for screen ( VGA - 720px x 480px )
+Were on content 24 rows the of height;
+*/
+
+/* Phones - Small Devices (Phones, 600px - 680px) */
+@media ( min-height: 540px ) {
     body .row-sm-fluid {
         height: auto !important;
     }
@@ -1172,8 +1217,16 @@ Were on content 24 rows the of height;
     }
 }
 
-/* Tablets - Middle Devices (Tablets, 768px > 1023px) */
-@media ( min-height: 768px ) {
+/* GRID ROW-MD
+The Grid it is building for pattern Mobile first 
+The screen is falowing the standart 18:9; contenting 12 cols;
+razon: 18 / 9 = 2 | cols = 12 and rows = 24
+Minimum screen = 768px x 600px for screen ( SVGA - 800px x 600px )
+Were on content 12 cols the of width;
+*/
+
+/* Tablets - Middle Devices (Tablets, 680px > 767px) */
+@media ( min-height: 600px ) {
     body .row-md-fluid {
         height: auto !important;
     }
@@ -1395,8 +1448,16 @@ Were on content 24 rows the of height;
     }
 }
 
-/* Desktops = Large Devices (Desktops, 1024px > 1439px) */
-@media ( min-height: 1024px ) {
+/* GRID ROW-LG
+The Grid it is building for pattern Mobile first 
+The screen is falowing the standart 18:9; contenting 24 rows;
+razon: 18 / 9 = 2 | cols = 12 and rows = 24
+Minimum screen = 992px x 720px for screen ( SVGA - 800px x 600px )
+Were on content 24 rows the of height;
+*/
+
+/* Desktops = Large Devices (Desktops, 768px > 900px) */
+@media ( min-height: 720px ) {
     body .row-lg-fluid {
         height: auto !important;
     }
@@ -1618,8 +1679,16 @@ Were on content 24 rows the of height;
     }
 }
 
-/* TVs and Multimedia - Extra Large Devices ( Tvs, 1440px > up) */
-@media ( min-height: 1440px ) {
+/* GRID ROW-XL
+The Grid it is building for pattern Mobile first 
+The screen is falowing the standart 18:9; contenting 24 rows;
+razon: 18 / 9 = 2 | cols = 12 and rows = 24
+Minimum screen = 1200px X 1050px for screen ( Full HD - 1920px - 1080px )
+Were on content 24 rows the of height;
+*/
+
+/* TVs and Multimedia - Extra Large Devices ( Tvs ) */
+@media ( min-height: 1050px ) {
     body .row-xl-fluid {
         height: auto !important;
     }
@@ -1840,7 +1909,9 @@ Were on content 24 rows the of height;
         margin-top: calc( 100vh - 0.2px );
     }
 }
+
 /*
+COMPONENT LINE
 The Grid it is building for pattern Mobile first 
 Were on content components for to facility the building of the applications;
 */
@@ -1866,7 +1937,7 @@ html .line-double {
     border-style: double !important;
 }
 
-
+/* COMPONENT BTN */
 /*TYPES BTNs - 
 	primary
 	secondary
@@ -1973,7 +2044,8 @@ body [data-animation="loader"] {
 	display: inline-block;
 }
 
-body [data-btn="secondary"], body [data-btn="progress"] {
+body [data-btn="secondary"], 
+body [data-btn="progress"] {
 	padding: 0.5em 1em;
 }
 
@@ -2049,7 +2121,9 @@ body [data-btn="ghost"] {
 	background-color: transparent;
 }
 
-body [data-btn="fab"], body [data-btn="fab"]::before, body [data-btn="fab"]::after {
+body [data-btn="fab"], 
+body [data-btn="fab"]::before, 
+body [data-btn="fab"]::after {
 	color: inherit;
 	content: "";
 	display: inline-block;
@@ -2089,7 +2163,7 @@ body [data-btn="fab"]::after {
 }
 
 body [data-btn="fab"]:not(:disabled):focus, 
-body [name="fab"]:not(:disabled):hover {
+body [data-btn="fab"]:not(:disabled):hover {
 	-webkit-transform: rotate(225deg);
 	-moz-transform: rotate(225deg);
 	-o-transform: rotate(225deg);
@@ -2154,6 +2228,38 @@ body [type="checkbox"][data-btn="switch"]:checked::after {
 
 body [data-btn="switch"]:checked::before {
 	background-color: #66BB6A;
+}
+
+/* COMPONENT ANIMATION */
+
+body [data-animation="preloader"],
+body [data-animation="loader"] {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: inline-block;
+}
+
+body [data-animation="preloader"],
+body [data-animation="loader"],
+body [data-animation="loader"]::before,
+body [data-animation="loader"]::after {
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+}
+
+body [data-animation="loader"], 
+body [data-animation="loader"]::before, 
+body [data-animation="loader"]::after {
+	-webkit-transform-origin: center center;
+	-moz-transform-origin: center center;
+	-o-transform-origin: center center;
+	-ms-transform-origin: center center;
+	transform-origin: center center;
 }
 
 body [data-animation="preloader"], 
@@ -2277,3 +2383,6 @@ body [data-animation="loader"]::after {
 	0% { transform: rotate(0deg); }
 	100% { transform: rotate(360deg); }
 }
+
+/* COMPONENT SHAPE */
+
