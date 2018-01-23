@@ -59,8 +59,8 @@ body pre, body p, body address, body article, body aside {
     border: none;
     color: inherit;
     clear: both;
-    font-size: inherit;
     float: none;
+    font-size: inherit;
     left: 0;
     margin: 0;
     min-width: 26.6666px; /*calc( 320px / 12 );*/
@@ -85,11 +85,15 @@ body ol li, body ul li {
     width: 100%;
 }
 
+body nav > ul {
+    width: 100%;
+}
+
 body li > *, body table td, body table th {
     display: inline-block;
     margin: 0;
     padding: 0.5em;
-    width: calc(100% - 1em) ;
+    width: calc( 100% - 1em ) ;
     vertical-align: top;
 }
 
@@ -173,6 +177,18 @@ body pre, body p {
     line-height: 1em;
     padding: 1em;
     text-align: left;
+}
+
+body .text-left {
+    text-align: left;
+}
+
+body .text-center {
+    text-align: center;
+}
+
+body .text-right {
+    text-align: right;
 }
 
 body .small-caps {
@@ -2384,5 +2400,326 @@ body [data-animation="loader"]::after {
 	100% { transform: rotate(360deg); }
 }
 
-/* COMPONENT SHAPE */
+/* COMPONENT SHAPE ARROWS*/
+
+body [data-shape="arrow-top"], 
+body [data-shape="arrow-right"],
+body [data-shape="arrow-bottom"], 
+body [data-shape="arrow-left"] {
+	display: inline-block;
+	position: relative;
+	border-color: #F00;
+}
+
+body [data-shape="arrow-top"]::before, 
+body [data-shape="arrow-right"]::before,
+body [data-shape="arrow-bottom"]::before, 
+body [data-shape="arrow-left"]::before {
+  content: "";
+  display: inline-block;
+  width: 0; 
+  height: 0; 
+  font-size: 0;
+  line-height: 0;  
+  padding: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  border-width: 5px;
+  border-style: solid;
+  border-color: inherit;
+  margin: 0px 5px 0px 0px; 
+}
+
+body [data-shape="arrow-top"]::before {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  top: -1px;
+}
+
+body [data-shape="arrow-right"]::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  top: 1px;
+}
+
+body [data-shape="arrow-bottom"]::before {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  top: 3.5px;
+}
+
+body [data-shape="arrow-left"]::before {
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+	border-left-color: transparent;
+	top: 1px;
+}/* COMPONENT SHAPE Arraows*/
+
+body [data-shape="arrow-top"], 
+body [data-shape="arrow-right"],
+body [data-shape="arrow-bottom"], 
+body [data-shape="arrow-left"] {
+	display: inline-block;
+	position: relative;
+	border-color: #F00;
+}
+
+body [data-shape="arrow-top"]::before, 
+body [data-shape="arrow-right"]::before,
+body [data-shape="arrow-bottom"]::before, 
+body [data-shape="arrow-left"]::before {
+  content: "";
+  display: inline-block;
+  width: 0; 
+  height: 0; 
+  font-size: 0;
+  line-height: 0;  
+  padding: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  border-width: 5px;
+  border-style: solid;
+  border-color: inherit;
+  margin: 0px 5px 0px 0px; 
+}
+
+body [data-shape="arrow-top"]::before {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  top: -1px;
+}
+
+body [data-shape="arrow-right"]::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  top: 1px;
+}
+
+body [data-shape="arrow-bottom"]::before {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  top: 3.5px;
+}
+
+body [data-shape="arrow-left"]::before {
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+	border-left-color: transparent;
+	top: 1px;
+}
+
+body [data-shape="lock"] {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #FFF;
+	border-radius: 4px;
+	position: relative;
+	top: calc(50% - 9px);
+}
+
+body [data-shape="lock"]::before {
+	content: "";
+	display: inline-block;
+	border-width: 1px;
+	border-style: solid;
+	border-color: inherit;
+	position: absolute;
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	border-bottom: transparent;
+	border-left: transparent;
+	transform: rotate(-45deg);
+	top: -7px;
+	left: 1px;
+}
+
+body [data-shape="lock"]::after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	width: 0;
+	height: 3px;
+	left: 5px;
+	top: 3px;
+	border: solid 1px;
+	border-color: inherit;
+}
+
+
+/*COMPONENT SHPAE LOCK */
+body [data-shape="lock"] {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #FFF;
+	border-radius: 4px;
+	position: relative;
+	top: calc(50% - 9px);
+}
+
+body [data-shape="lock"]::before {
+	content: "";
+	display: inline-block;
+	border-width: 1px;
+	border-style: solid;
+	border-color: inherit;
+	position: absolute;
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	border-bottom: transparent;
+	border-left: transparent;
+	transform: rotate(-45deg);
+	top: -7px;
+	left: 1px;
+}
+
+body [data-shape="lock"]::after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	width: 0;
+	height: 3px;
+	left: 5px;
+	top: 3px;
+	border: solid 1px;
+	border-color: inherit;
+}
+
+/*COMPONENT SHPAE - TCKET */
+/*icon boleto*/
+
+body [data-shape="ticket"], 
+body [data-shape="ticket"]::before,
+body [data-shape="ticket"]::after {
+	border-bottom-width: 0px;
+	border-left-width: 2px;
+	border-right-width: 0px;
+	border-style: solid;
+	border-top-width: 0px;
+	bottom: 0;
+	content: "";
+	display: inline-block;
+	font-size: 0;
+	height: inherit;
+	left: 0;
+	position: relative;
+	right: 0
+	top: 0px;
+}
+
+body [data-shape="ticket"] {
+	border-left-width: 1px;
+	height: 12px;
+    width: 9px;
+	top: 1px;
+    margin-left: 5px
+}
+
+body [data-shape="ticket"]::before {
+	left: -5px;
+}
+
+body [data-shape="ticket"]::after {
+	left: -1px;
+}
+
+/*COMPONENT CREDIT-CARD */
+
+body [data-shape="credit-card"],
+body [data-shape="credit-card"]::before {
+	border: solid 1px;
+	border-color: inherit;
+	bottom: 0;
+	content: "";
+	display: inline-block;
+	font-size: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+}
+
+body [data-shape="credit-card"] {
+	border-color: #F00;
+	position: relative;
+	height: 10px;
+	width: 14px;
+	-webkit-border-radius: 3px; 
+	-moz-border-radius: 3px; 
+	-o-border-radius: 3px; 
+	-ms-border-radius: 3px; 
+	border-radius: 3px;
+}
+
+body [data-shape="credit-card"]::before {
+	position: absolute;
+	border-top-width: 3px;
+	border-right-width: 0;
+	border-bottom-width: 0;
+	border-left-width: 0;
+	width: inherit;
+	height: 0;
+	top: 2px;
+}
+
+/*COMPONENT SHAPE CASH-OUT*/
+
+body [data-shape="cash-out"], 
+body [data-shape="cash-out"]::before,
+body [data-shape="cash-out"]::after {
+	width: 14px;
+	display: inline-block;
+	position: relative;
+	font-size: 0;
+	padding: 0;
+	border-width: 1px;
+	border-color: inherit;
+}
+
+body [data-shape="cash-out"]::before,
+body [data-shape="cash-out"]::after {
+	content: "";
+	position: absolute;
+}
+
+body [data-shape="cash-out"] {
+	height: 14px;
+	border-top: solid 1px;
+	border-color: #F00;
+}
+
+body [data-shape="cash-out"]::before {
+	border-left: solid 1px;
+	height: 11px;
+	left: 6px;
+	top: 1px;
+}
+
+body [data-shape="cash-out"]::after {
+	width: 6px;
+	height: 6px;
+	left: 3px;
+	top: 6px;
+	border-right: solid 1px;
+	border-bottom: solid 1px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
 

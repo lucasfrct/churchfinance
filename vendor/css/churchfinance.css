@@ -62,12 +62,23 @@ body header .title {
 	padding: 0.5em;
 }
 
-body footer div {
-	margin-top: 7.5px !important;
+body footer > nav {
 }
 
-body footer > div > a {
-	font-size: 0.6em;
+body footer > nav > ul {
+}
+
+body footer > nav > ul > li {
+	width: calc( ( 100% / 5 ) - 4px);
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+}
+
+body footer > nav > ul > li > a {
+	text-align: center;
+	font-size: 0.7em;
+	padding-top: 0.6em;
 }
 
 body .alias {
@@ -143,16 +154,24 @@ body.page-login .teclado > button:active {
 }
 
 body.page-home {
-
 }
 
 body.page-home .saldo {
-	padding: 1em;
-	line-height: 1.4em;
-	background-color: #FFF;
-	margin: 0.5em;
+	padding: 1em 1em 0 1em;
+}
+
+body.page-home .saldo p {
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-o-border-radius: 6px;
+	-ms-border-radius: 6px;
 	border-radius: 6px;
+	-webkit-box-shadow: 0 0 1px 0px #AAA;
+	-moz-box-shadow: 0 0 1px 0px #AAA;
+	-o-box-shadow: 0 0 1px 0px #AAA;
+	-ms-box-shadow: 0 0 1px 0px #AAA;
 	box-shadow: 0 0 1px 0px #AAA;
+	line-height: 1.4em;
 }
 
 body.page-extract .saldo{
@@ -163,152 +182,116 @@ body.page-extract .saldo{
 
 body.page-extract .menu {
 	text-align: center;
-	padding: 0.5em 0 0 0;
 	border-bottom: solid 1px #DDD;
+	font-size: 0.75em;
 }
 
-body.page-extract .menu > div {
-	padding: 0.5em;
-	font-size: 0.8em;
+body.page-extract .menu ul {
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-<a href="#" class="seta-cima">Seta para cima</a>
-<span class="seta-baixo">Seta para baixo</span>
-<i class="seta-esquerda">Seta para esquerda</i>
-<div class="seta-direita">Seta para direita</div>
-*/
-
-
-body [data-shape="arrow-top"], 
-body [data-shape="arrow-right"],
-body [data-shape="arrow-bottom"], 
-body [data-shape="arrow-left"] {
+body.page-extract .menu ul > li {
 	display: inline-block;
+	width: calc( ( 100% / 4 ) - 8px );
+	margin: 0;
+}
+
+body.page-extract .menu ul > li:hover,
+body.page-extract .menu ul > li:active, 
+body.page-extract .menu ul > li.active {
+	border-bottom: solid 2px #F00;
+}
+
+body.page-extract .menu ul > li a {
+	padding: 0.9em 0;
+}
+
+body.page-extract .view-extract {
+	background-color: #FBE9E7; 
+}
+
+body.page-extract .view-extract > section {
+	background-color: #FFF;
+	padding: 0 1em 0 2em;
+}
+
+body.page-extract .view-extract > section:first-child {
+	margin-top: 20px; 
+}
+
+body.page-extract .view-extract > section.credit {
+	color: #2E7D32;
+	border-color: #1B5E20;
+}
+
+
+body.page-extract .view-extract > section.debit {
+	color: #424242;
+}
+
+body.page-extract .view-extract > section[data-type="date"] {
+	background-color: #757575;
+	border-radius: 20px;
+	color: #FFF;
+	font-size: 11px;
+	height: 20px;
+	margin-bottom: -20px;
+	margin-left: 35%;
+	padding: 2px;
 	position: relative;
-	border-color: #F00;
+	text-align: center;
+	top: 25px;
+	width: 30%;
+	z-index: 10;
 }
 
-body [data-shape="arrow-top"]::before, 
-body [data-shape="arrow-right"]::before,
-body [data-shape="arrow-bottom"]::before, 
-body [data-shape="arrow-left"]::before {
-  content: "";
-  display: inline-block;
-  width: 0; 
-  height: 0; 
-  font-size: 0;
-  line-height: 0;  
-  padding: 0;
-  position: relative;
-  top: 0;
-  left: 0;
-  border-width: 5px;
-  border-style: solid;
-  border-color: inherit;
-  margin: 0px 5px 0px 0px; 
-}
-
-body [data-shape="arrow-top"]::before {
-  border-left-color: transparent;
-  border-right-color: transparent;
-  border-top-color: transparent;
-  top: -1px;
-}
-
-body [data-shape="arrow-right"]::before {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-  border-right-color: transparent;
-  top: 1px;
-}
-
-body [data-shape="arrow-bottom"]::before {
-  border-left-color: transparent;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-  top: 3.5px;
-}
-
-body [data-shape="arrow-left"]::before {
-	border-top-color: transparent;
-	border-bottom-color: transparent;
-	border-left-color: transparent;
-	top: 1px;
-}
-
-body [data-shape="lock"] {
-	display: inline-block;
-	width: 12px;
-	height: 12px;
-	border-width: 1px;
-	border-style: solid;
-	border-color: #FFF;
-	border-radius: 4px;
-	position: relative;
-	top: calc(50% - 9px);
-}
-
-body [data-shape="lock"]::before {
+body.page-extract .view-extract > section[data-type="date"]::after {
 	content: "";
+	background-color: inherit;
 	display: inline-block;
-	border-width: 1px;
-	border-style: solid;
-	border-color: inherit;
+	height: 5px;
+	left: calc( 50% - 5px );
 	position: absolute;
-	width: 9px;
-	height: 9px;
-	border-radius: 50%;
-	border-bottom: transparent;
-	border-left: transparent;
-	transform: rotate(-45deg);
-	top: -7px;
-	left: 1px;
+	top: 0;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	top: 18px;
+	width: 5px;
 }
 
-body [data-shape="lock"]::after {
-	content: "";
-	display: inline-block;
-	position: absolute;
-	width: 0;
-	height: 3px;
-	left: 5px;
-	top: 3px;
-	border: solid 1px;
+body.page-extract .view-extract > section .divider {
+	min-height: 50px;
+	border-left: solid 1px #000;
+	margin-left: 6px;
+	font-size: 0;
 	border-color: inherit;
 }
 
-body .text-right {
+body.page-extract .view-extract > section b {
+	display: block;
+	margin: 0;
+	padding: 0;
+	font-size: 0.7em;
+	padding: 0.5em 0.5em 0.5em 0;
+	border-color: inherit;
+}
+
+body.page-extract .view-extract > section b span {
+	display: inline-block;
+	position: relative;
+	border-color: inherit;	
+}
+
+body.page-extract .view-extract > section b span:nth-child(2) {
+	margin-left: 0.5em;
+}
+body.page-extract .view-extract > section b span:last-child {
 	text-align: right;
+	float: right;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+body.page-extract .view-extract [data-shape="credit-card"] {
+	left: -2px;
+}
