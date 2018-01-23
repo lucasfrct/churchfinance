@@ -184,6 +184,7 @@ body.page-extract .menu {
 	text-align: center;
 	border-bottom: solid 1px #DDD;
 	font-size: 0.75em;
+	background-color: #FDFDFD;
 }
 
 body.page-extract .menu ul {
@@ -206,7 +207,7 @@ body.page-extract .menu ul > li a {
 }
 
 body.page-extract .view-extract {
-	background-color: #FBE9E7; 
+ 
 }
 
 body.page-extract .view-extract > section {
