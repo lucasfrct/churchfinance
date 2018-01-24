@@ -2640,8 +2640,8 @@ body [data-shape="ticket"]::after {
 
 /*COMPONENT CREDIT-CARD */
 
-body [data-shape="credit-card"],
-body [data-shape="credit-card"]::before {
+body [data-shape="debit-card"],
+body [data-shape="debit-card"]::before {
 	border: solid 1px;
 	border-color: inherit;
 	bottom: 0;
@@ -2653,7 +2653,7 @@ body [data-shape="credit-card"]::before {
 	top: 0;
 }
 
-body [data-shape="credit-card"] {
+body [data-shape="debit-card"] {
 	border-color: #F00;
 	position: relative;
 	height: 10px;
@@ -2665,7 +2665,7 @@ body [data-shape="credit-card"] {
 	border-radius: 3px;
 }
 
-body [data-shape="credit-card"]::before {
+body [data-shape="debit-card"]::before {
 	position: absolute;
 	border-top-width: 3px;
 	border-right-width: 0;
@@ -2721,5 +2721,118 @@ body [data-shape="cash-out"]::after {
 	-o-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
+}
+
+/* COMPONENT CREDIT */
+body [data-shape="credit"], 
+body [data-shape="credit"]::before {
+	display: inline-block;
+	width: 14px;
+	line-height: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+
+body [data-shape="credit"] {
+	font-size: 0;
+	height: 14px;
+	position: relative;
+	top: -9px;
+	margin-bottom: -7px;
+}
+
+body [data-shape="credit"]::before {
+	position: absolute;
+	content: "$";
+	height: 6.5px;
+	top: 7px;
+	font-size: 14px;
+}
+
+/* COMPONENT SHAPE SEARCH */
+
+body [data-shape="search"],
+body [data-shape="search"]::before {
+	display: inline-block;
+	position: relative;
+	border:solid 1px #F00;
+	font-size: 0;
+	line-height: 0;
+}
+
+body [data-shape="search"] {
+	width: 2px;
+	height: 6px;
+	border-top: none;
+	top: -2px;
+	margin-bottom: -2px;
+	-webkit-transform: rotate(-35deg);
+	-moz-transform: rotate(-35deg);
+	-o-transform: rotate(-35deg);
+	-ms-transform: rotate(-35deg);
+	transform: rotate(-35deg);
+}
+
+body [data-shape="search"]::before {
+	border:solid 1px #F00;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+	content: "";
+	left: -6px;
+	height: 12px;
+	position: absolute;
+	top: -15px;
+	width: 12px;
+}
+
+/* 	COMPONENT SHAPE BACKSPACE */
+
+body [data-shape="backspace"],
+body [data-shape="backspace"]::before,
+body [data-shape="backspace"]::after  {
+	display: inline-block;
+	height: 12px;
+	border: solid 1px #000;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+body [data-shape="backspace"] {
+	width: 14px;
+	height: 12px;
+	border-left: none;
+	position: relative;
+	font-size: 0;
+}
+
+body [data-shape="backspace"]::before {
+	height: 9px;
+	width: 9px;
+	left: -5px;
+	top: 1px;
+	border-top: none;
+	border-left: solid 1px #000;
+	border-right: none;
+	border-bottom: solid 1px #000;
+	transform: rotate(45deg);
+}
+
+body [data-shape="backspace"]::after {
+	top: -2.5px;
+	left: 3px;
+	width: 10px;
+	height: 10px;
+	content: "x";
+	font-size: 13px;
+	border: none;
+	color: #000;
 }
 

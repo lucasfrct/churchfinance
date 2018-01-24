@@ -58,10 +58,6 @@ body header {
 	background-color: #FFF;
 }
 
-body header .title {
-	padding: 0.5em;
-}
-
 body footer > nav {
 }
 
@@ -100,6 +96,23 @@ body .alias::before {
 	padding: 15px;
 }
 
+body .title {
+	display: inline-block;
+	position: relative;
+	text-align: left;
+	padding: 0.4em;
+}
+
+body .title span {
+	display: block;
+}
+
+body .arrow {
+	margin-top: 12px;
+	margin-left: calc( 100% - 34px );
+}
+
+
 body.page-login .lock {
 	position: absolute;
 }
@@ -123,8 +136,8 @@ body.page-login .teclado {
 }
 
 body.page-login .teclado > button {
-	width: calc( 100% / 3 - 9px );
-	padding: 8px 2px;
+	width: calc( ( 100% / 3 ) - 10px );
+	padding: 7px 2px;
 	margin: 5px 4px;
 	display: inline-block;
 	border: none;
@@ -153,6 +166,21 @@ body.page-login .teclado > button:active {
 	box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.6);
 }
 
+body.page-login .msg-login {
+	padding: 1em;
+}
+
+body.page-login footer > nav > ul > li,
+body.page-agencias footer > nav > ul > li {
+	width: calc( (100% / 3 ) - 4px );
+}
+
+body.page-login footer > nav > ul > li a,
+body.page-agencias footer > nav > ul > li a {
+	padding-top: 0.9em; 
+	font-size: 0.9em;
+}
+
 body.page-home {
 }
 
@@ -174,14 +202,17 @@ body.page-home .saldo p {
 	line-height: 1.4em;
 }
 
-body.page-extract .saldo{
+
+body.page-extract .saldo {
 	border-top: solid 1px #DDD;
-	border-bottom: solid 1px #DDD;
+	background-color: #FFF;
 	font-size: 0.85em;
+	padding: 1em;
 }
 
 body.page-extract .menu {
 	text-align: center;
+	border-top: solid 1px #DDD;
 	border-bottom: solid 1px #DDD;
 	font-size: 0.75em;
 	background-color: #FDFDFD;
@@ -236,34 +267,52 @@ body.page-extract .view-extract > section[data-type="date"] {
 	font-size: 11px;
 	height: 20px;
 	margin-bottom: -20px;
-	margin-left: 35%;
+	margin-left: 50px;
 	padding: 2px;
 	position: relative;
 	text-align: center;
-	top: 25px;
-	width: 30%;
+	top: 40px;
+	width: 100px;
 	z-index: 10;
 }
 
-body.page-extract .view-extract > section[data-type="date"]::after {
+body.page-extract .view-extract > section[data-type="date"]::before {
 	content: "";
-	background-color: inherit;
+	background-color: #BBB;
 	display: inline-block;
 	height: 5px;
-	left: calc( 50% - 5px );
+	left: 104px;
 	position: absolute;
-	top: 0;
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
 	-o-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
-	top: 18px;
+	top: 7.5px;
 	width: 5px;
 }
 
+body.page-extract .view-extract > section[data-type="date"]::after {
+	content: attr(data-saldo);
+	top: 0px;
+	left: 107px;
+	position: absolute;
+	color: #000;
+	display: inline-block;
+	width: 120px;
+	height: 15px;
+	background-color: #BBB;
+	text-align: center;
+	padding: 0.25em;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+}
+
 body.page-extract .view-extract > section .divider {
-	min-height: 50px;
+	min-height: 60px;
 	border-left: solid 1px #000;
 	margin-left: 6px;
 	font-size: 0;
@@ -293,6 +342,93 @@ body.page-extract .view-extract > section b span:last-child {
 	float: right;
 }
 
-body.page-extract .view-extract [data-shape="credit-card"] {
+body.page-extract .view-extract [data-shape="debit-card"] {
 	left: -2px;
+}
+
+
+body.page-extract .view-extract {
+
+}
+
+
+body.page-transation {
+
+}
+
+body.page-transation main,
+body.page-service main  {
+	text-align: center;
+}
+
+body.page-transation main div > a,
+body.page-service main div > a {
+	background-color: #FFF;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	-ms-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 0 1px #000;
+	-moz-box-shadow: 0 0 1px #000;
+	-o-box-shadow: 0 0 1px #000;
+	-ms-box-shadow: 0 0 1px #000;
+	box-shadow: 0 0 1px #000;
+	display: inline-block;
+	text-align: center;
+	width: calc( ( 100% / 2 ) - 8% );
+	margin-left: 5%;
+	margin-top: 5%;
+}
+
+body.page-transation main div > a span,
+body.page-service main div > a span {
+	text-align: center;
+	display: inline-block;
+	width: 100%;
+	padding: 0 1em;
+	line-height: 1.4em;
+}
+
+body.page-help main .title {
+	padding: 1em;
+}
+
+body.page-help main .title small {
+	color: #666;
+}
+
+body.page-help main .search {
+	padding: 1em;
+	padding-left: 2em;
+	background-color: #FFF;
+	margin: 0 1em;
+	-webkit-box-shadow: 0 0 1px #666;
+	-moz-box-shadow: 0 0 1px #666;
+	-o-box-shadow: 0 0 1px #666;
+	-ms-box-shadow: 0 0 1px #666;
+	box-shadow: 0 0 1px #666;
+}
+
+body.page-help main .search input {
+	font-size: 1em;
+	padding: 0.5em 1em;
+	background-color: transparent;
+	border: none;
+	display: inline-block;
+	width: calc( 100% - 14px );
+}
+
+body.page-help main .duvidas {
+	padding: 1em;
+}
+
+body.page-help main .duvidas span {
+	margin: 1em 0;
+	display: inline-block;
+	font-size: 1.2em;
+}
+
+body.page-help main .duvidas > p {
+	border-bottom: solid 1px #DDD;
 }
