@@ -1,39 +1,42 @@
-body .text-center {
-	text-align: center;
-}
-
-body .color-primary {
+body .background-primary {
 	background-color: #E64A19;
 	color: #FFF;
 }
 
-body .color-secondary {
+body .background-secondary {
 	background-color: #FF5722;
 	color: #FFF;
 }
 
-body .color-terciary {
+body .background-terciary {
 	background-color: #FF8A65;
 	color: #FFF;
 }
 
-body .color-contrast {
-	background-color: #FFCCBC;
-	color: #424242;
-}
-
-body .color-background {
+body .background-white {
 	background-color: #FAFAFA;
 	color: #424242;
 }
 
-body .color-details {
+body .background-black {
 	background-color: #424242;
 	color: #FFF;
 }
 
 body .text-primary {
+	color: #FF5722;
+}
+
+body .text-secondary {
 	color: #E64A19;
+}
+
+body .text-white {
+	color: #FFF;
+}
+
+body .text-black {
+	color: #424242;
 }
 
 body .radius-circle {
@@ -44,91 +47,73 @@ body .radius-circle {
 	border-radius: 50%;
 }
 
-body .hr {
-	display: block;
-	background-color: #FFF;
-	padding: 0;
-	font-size: 0;
-	height: 2px;
-	margin-top: 10px;
-	margin-bottom: 7.5px;
+body .preloader {
+	color: #E64A19;
 }
 
 body header {
 	background-color: #FFF;
 }
 
-body footer > nav {
-}
-
-body footer > nav > ul {
-}
-
-body footer > nav > ul > li {
-	width: calc( ( 100% / 5 ) - 4px);
-	display: inline-block;
-	vertical-align: top;
-	text-align: center;
-}
-
-body footer > nav > ul > li > a {
-	text-align: center;
-	font-size: 0.7em;
-	padding-top: 0.6em;
-}
-
 body .alias {
-	background-color: #EAEAEA;
-	display: table-cell;
-	height: 30px;
-	vertical-align: middle;
 	position: relative;
 	text-align: center;
-	-webkit-transform: translate( calc( 50% - 7.5px ), calc( 50% - 11px ) );
-	-moz-transform: translate( calc( 50% - 7.5px ), calc( 50% - 11px ) );
-	-o-transform: translate( calc( 50% - 7.5px ), calc( 50% - 11px ) );
-	-ms-transform: translate( calc( 50% - 7.5px ), calc( 50% - 11px ) );
-	transform: translate( calc( 50% - 7.5px ), calc( 50% - 11px ) );
-	width: 30px;
-}
-
-body .alias::before {
-	padding: 15px;
+	width: 30px !important;
+	height: 30px !important;
+	min-height: 30px;
+	min-width: 30px;
+	color: #FFF !important;
+	padding: 7px 5px;
+	font-size: 10px;
+	margin-top: 10%;
+	margin-left: calc( 50% - 16px );
 }
 
 body .title {
-	display: inline-block;
-	position: relative;
-	text-align: left;
-	padding: 0.4em;
+	padding: 0.4em 0;
 }
 
-body .title span {
+body .title > * {
 	display: block;
+	position: relative;
+	text-align: left;
+	padding: 0.1em;
 }
 
 body .arrow {
-	margin-top: 12px;
-	margin-left: calc( 100% - 34px );
+	margin-left: calc( 50% - 10px );
+	height: 24px !important;
+	min-height: 24px !important;
+	margin-top: 10%;
 }
 
 
 body.page-login .lock {
 	position: absolute;
+	color: #FFF;
+	top: 8px;
 }
 
 body.page-login .input-login {
 	display: block;
-	font-size: 1em;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	-o-border-radius: 4px;
 	-ms-border-radius: 4px;
 	border-radius: 4px;
 	font-size: 1.4em;
-	padding: 0.25em 1em;
-	margin-top: 8px;
+	padding: 0.5em 1em;
+	margin: 0 0 0 20px;
 	background-color: transparent;
+	width: calc( 100% - 20px );
+	top: 4px;
+	position: relative;
+	outline: 0;
+}
+
+body.page-login .hr {
+	margin-top: 40px;
+	position: relative;
 }
 
 body.page-login .teclado {
